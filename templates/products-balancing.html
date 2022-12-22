@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/knives/style.css' %}" media="screen">
+    <section class="u-align-center u-clearfix u-container-align-center u-section-2" id="sec-34ef">
+      {% for product in products %}
+        <div class="u-container-layout u-similar-container u-container-layout-1"><!--product_image-->
+                <img alt="" class="u-image u-image-round u-product-control u-radius-10 u-image-1" src="{{ product.images.url }}" data-image-width="259" data-image-height="194"><!--/product_image--><!--product_title-->
+                <h4 class="u-align-center u-product-control u-text u-text-1">
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->{{ product.title }}<!--/product_title_content--></a>
+                </h4><!--/product_title--><!--product_price-->
+                <div class="u-product-control u-product-price u-product-price-1">
+                  <div class="u-price-wrapper u-spacing-10"><!--product_old_price-->
+                    <div class="u-hide-price u-old-price"><!--product_old_price_content-->$12<!--/product_old_price_content--></div><!--/product_old_price--><!--product_regular_price-->
+                    <div class="u-price u-text-palette-2-base" style="font-size: 1.25rem; font-weight: 700;"><!--product_regular_price_content-->${{ product.price }}<!--/product_regular_price_content--></div><!--/product_regular_price-->
+                  </div>
+                </div><!--/product_price--><!--product_button--><!--options_json--><!--{"clickType":"add-to-cart","content":"ПОдробнее"}--><!--/options_json-->
+                <a href="{% url 'post_balancing' product.pk %}" class="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-none u-product-control u-text-body-color u-btn-1"><!--product_button_content-->Подробнее<!--/product_button_content--></a><!--/product_button-->
+              </div>
+      {% endfor %}
+    </section>
+
+    
+    
+{% endblock %}

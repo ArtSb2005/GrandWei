@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+      
+    </section>
+    <section class="u-align-center u-clearfix u-section-2" id="sec-da92">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h4 class="u-text u-text-default u-text-1"> Запасные части к&nbsp;сельскохозяйственной технике</h4>
+        <div class="u-border-1 u-border-grey-30 u-expanded-width u-line u-line-horizontal u-line-1"></div><!--products--><!--products_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/products_options_json-->
+        <div class="u-expanded-width u-products u-products-1">
+          <div class="u-repeater u-repeater-1"><!--product_item-->
+            <div class="u-align-center u-container-style u-custom-item u-products-item u-repeater-item" data-href="{% url 'kn' %}" title="Ножи 1" href="Ножи-1.html">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1"><!--product_image-->
+                <img alt="" class="u-expanded-width u-hover-feature u-image u-image-round u-product-control u-radius-10 u-image-1" src="{% static 'images/2222222.jpg' %}" data-image-width="275" data-image-height="183"><!--/product_image--><!--product_title-->
+                <h4 class="u-align-center u-custom-item u-hover-feature u-product-control u-text u-text-2">
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->Ножи собственного производства<!--/product_title_content--></a>
+                </h4><!--/product_title-->
+              </div>
+            </div><!--/product_item--><!--product_item-->
+            <div class="u-align-center u-container-style u-custom-item u-products-item u-repeater-item" data-href="{% url 'balancing' %}" title="Ножи 1" href="Ножи-2.html">
+              <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2"><!--product_image-->
+                <img alt="" class="u-expanded-width u-hover-feature u-image u-image-round u-product-control u-radius-10 u-image-2" src="{% static 'images/2222222.jpg' %}" data-image-width="275" data-image-height="183"><!--/product_image--><!--product_title-->
+                <h4 class="u-align-center u-custom-item u-hover-feature u-product-control u-text u-text-3">
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->Балансировка и ремонт барабанов<!--/product_title_content--></a>
+                </h4><!--/product_title-->
+              </div>
+            </div><!--/product_item--><!--product_item-->
+          </div>
+        </div><!--/products-->
+      </div>
+
+    </section>
+    <section class="u-align-center u-clearfix u-container-align-center u-section-3" id="sec-9718">
+      <div class="u-clearfix u-sheet u-sheet-1"><!--products--><!--products_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/products_options_json-->
+        <div class="u-expanded-width u-products u-products-1">
+            {% for i in IndexProduct %}
+                <div class="u-repeater u-repeater-1"><!--product_item-->
+            <div class="u-align-center u-container-style u-products-item u-repeater-item u-shape-rectangle">
+              <div class="u-container-layout u-similar-container u-container-layout-1"><!--product_image-->
+                <img alt="" class="u-image u-image-round u-product-control u-radius-10 u-image-1" src="{{ i.images.url }}" data-image-width="259" data-image-height="194"><!--/product_image--><!--product_title-->
+                <h4 class="u-align-center u-product-control u-text u-text-1">
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->{{ i.title }}<!--/product_title_content--></a>
+                </h4><!--/product_title--><!--product_price-->
+                <div class="u-product-control u-product-price u-product-price-1">
+                  <div class="u-price-wrapper u-spacing-10"><!--product_old_price-->
+                    <div class="u-hide-price u-old-price"><!--product_old_price_content-->$12<!--/product_old_price_content--></div><!--/product_old_price--><!--product_regular_price-->
+                    <div class="u-price u-text-palette-2-base" style="font-size: 1.25rem; font-weight: 700;"><!--product_regular_price_content-->${{ i.price }}<!--/product_regular_price_content--></div><!--/product_regular_price-->
+                  </div>
+                </div><!--/product_price--><!--product_button--><!--options_json--><!--{"clickType":"add-to-cart","content":"ПОдробнее"}--><!--/options_json-->
+                <a href="{% url 'post_kn' i.pk %}" class="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-custom-item u-none u-product-control u-text-body-color u-btn-1"><!--product_button_content-->Подробнее<!--/product_button_content--></a><!--/product_button-->
+              </div>
+            </div><!--/product_item--><!--product_item-->
+          </div>
+            {% endfor %}
+
+        </div><!--/products--><!--products--><!--products_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/products_options_json-->
+
+        <div class="u-expanded-width u-products u-products-4">
+          {% for i in BalancingProduct %}
+                <div class="u-repeater u-repeater-1"><!--product_item-->
+            <div class="u-align-center u-container-style u-products-item u-repeater-item u-shape-rectangle">
+              <div class="u-container-layout u-similar-container u-container-layout-1"><!--product_image-->
+                <img alt="" class="u-image u-image-round u-product-control u-radius-10 u-image-1" src="{{ i.images.url }}" data-image-width="259" data-image-height="194"><!--/product_image--><!--product_title-->
+                <h4 class="u-align-center u-product-control u-text u-text-1">
+                  <a class="u-product-title-link" href="#"><!--product_title_content-->{{ i.title }}<!--/product_title_content--></a>
+                </h4><!--/product_title--><!--product_price-->
+                <div class="u-product-control u-product-price u-product-price-1">
+                  <div class="u-price-wrapper u-spacing-10"><!--product_old_price-->
+                    <div class="u-hide-price u-old-price"><!--product_old_price_content-->$12<!--/product_old_price_content--></div><!--/product_old_price--><!--product_regular_price-->
+                    <div class="u-price u-text-palette-2-base" style="font-size: 1.25rem; font-weight: 700;"><!--product_regular_price_content-->${{ i.price }}<!--/product_regular_price_content--></div><!--/product_regular_price-->
+                  </div>
+                </div><!--/product_price--><!--product_button--><!--options_json--><!--{"clickType":"add-to-cart","content":"ПОдробнее"}--><!--/options_json-->
+                <a href="{% url 'post_balancing' i.pk %}" class="u-border-2 u-border-grey-25 u-btn u-btn-rectangle u-button-style u-custom-item u-none u-product-control u-text-body-color u-btn-1"><!--product_button_content-->Подробнее<!--/product_button_content--></a><!--/product_button-->
+              </div>
+            </div><!--/product_item--><!--product_item-->
+          </div>
+            {% endfor %}
+        </div><!--/products--><!--products--><!--products_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/products_options_json-->
+      </div>
+      
+    </section>
+    <section class="u-clearfix u-section-4" id="sec-085c">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-grey-light-2 u-map u-map-1">
+            <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/granvey/1314121316/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Гранвей</a><a href="https://yandex.ru/maps/39/rostov-na-donu/category/agricultural_machinery_equipment/184106620/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Сельскохозяйственная техника, оборудование в Ростове‑на‑Дону</a><iframe src="https://yandex.ru/map-widget/v1/-/CCUnzHGOlD" width="560" height="850" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+        </div>
+        <div class="u-container-style u-grey-10 u-group u-group-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="">
+          <div class="u-container-layout u-valign-middle u-container-layout-1">
+            <p class="u-align-center u-text u-text-default u-text-1">Юридический адрес: 344065, Ростовская обл., г. Ростов-на-Дону, ул. Геологическая, д.2, оф.304<br>Почтовый адрес: 344065, Ростовская обл., г. Ростов-на-Дону, ул. Геологическая, д.2, оф.304<br>ИНН 6166094290 / КПП 616601001<br>Р/сч. 40702810800400003817 в ПАО КБ "ЦЕНТР-ИНВЕСТ"<br>К/сч:  30101810100000000762<br>БИК  046015762<br>ОГРН 1156196049657<br>ОКПО 27192105<br>ОКАТО 60401378000<br>ОКВЭД 51.65<br>ОКОГУ 4210014<br>ОКОПФ 12300<br>ОКФС 16<br>Тел./Факс (863) 252-26-61<br>Сот:8-928-107-78-49<br>E-mail: granwei@mail.ru<br>Гл. бухгалтер: Ларская Юлия Витальевна<br>Ген. директор: Ларская Юлия Витальевна действует на основании Устава.<br></p>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
+    
