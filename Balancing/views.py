@@ -14,7 +14,7 @@ class BalancingPageView(ListView):
     def detail_view(request, id):
         post = get_object_or_404(BalancingProduct, id=id)
         photos = BalancingProductImage.objects.filter(post=post)
-        return render(request, 'product.html', {
+        return render(request, 'product-balancing.html', {
             'post': post,
             'photos': photos
         })

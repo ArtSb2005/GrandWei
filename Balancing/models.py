@@ -6,6 +6,7 @@ class BalancingProduct(models.Model):
     description = models.CharField(max_length=255, verbose_name='Описание')
     price = models.CharField(max_length=255, verbose_name='Стоимость')
     images = models.FileField(upload_to='images/')
+    video = models.FileField(upload_to='images/', blank=True, null=True, verbose_name='Видео(необязательно)')
 
     def __str__(self):
         return self.title
